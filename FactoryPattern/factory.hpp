@@ -45,27 +45,29 @@ class OperationDivide : public Operation {
 };
 
 class OperationFactory {
-  public:
+ public:
   static Operation* CreateOperation(char operate) {
     Operation* operation = NULL;
     switch (operate) {
-      case '+' :
+      case '+':
         operation = new OperationAdd();
         break;
-      case '-' :
+      case '-':
         operation = new OperationSubtract();
         break;
-      case '*' :
+      case '*':
         operation = new OperationMultiply();
         break;
-      case '/' :
+      case '/':
         operation = new OperationDivide();
         break;
-      default :
+      default:
         throw string("无效的运算符\n");
     }
     return operation;
   }
+ private:
+  Operation() {}
 };
 
 #if 0
